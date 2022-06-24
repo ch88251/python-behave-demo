@@ -4,8 +4,8 @@ pipeline {
   stages {
     stage('Acceptance Testing') {
       steps {
-        sh(script: 'behave --junit')
+        sh(script: 'behave -f allure_behave.formatter:AllureFormatter -o allure-results features')
       }
-    }    
+    }
   }
 }
